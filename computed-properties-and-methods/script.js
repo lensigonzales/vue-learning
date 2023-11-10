@@ -560,12 +560,12 @@ Vue.createApp({
     },
   },
   methods: {
-    getDiscountPrice(originalPrice) {
+    getDiscountPrice(originalPrice, discount) {
       originalPrice = originalPrice.split("$");
       originalPrice = Number(originalPrice[1]);
       const discountPrice = (
         originalPrice -
-        (originalPrice * 20) / 100
+        (originalPrice * discount) / 100
       ).toFixed(2);
       return "$".concat("", discountPrice.toString());
     },
